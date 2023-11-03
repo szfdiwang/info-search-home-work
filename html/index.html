@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Demo</title>
+    <link rel="stylesheet" href="./index.css" />
+</head>
+<style>
+    .movie {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-bottom: 100px;
+    }
+
+    .movie .movie-box {
+        width: 200px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .movie .movie-img {
+        width: 100%;
+        height: 280px;
+        margin-bottom: 20px;
+    }
+
+    .movie .movie-box .movie-card {
+        padding: 10px;
+        font-size: 12px;
+    }
+</style>
+
+<body>
+    <h1>看什么电影呢</h1>
+    <div class="movie">
+        {{each movieList}}
+        <div class="movie-box">
+            <img class="movie-img" src="https://images.weserv.nl/?url={{$value.imgLink}}" alt="">
+            <div>
+                <span>片名:&nbsp;</span>
+                <span>{{$value.title}}</span>
+            </div>
+            <div>
+                <span>豆瓣评分:&nbsp;</span>
+                <span style="color: green;">{{$value.score == 0?'暂未评分':$value.score}}</span>
+            </div>
+            <div>
+                <span>演员表:&nbsp;</span>
+                <span>{{$value.actors}}</span>
+            </div>
+            <div>
+                <span>导演:&nbsp;</span>
+                <span>{{$value.director}}</span>
+            </div>
+            <div>
+                <span>类型:&nbsp;</span>
+                <span>{{$value.category}}</span>
+            </div>
+            <div>
+                <span>地区:&nbsp;</span>
+                <span>{{$value.region}}</span>
+            </div>
+            <div>
+                <span>上映时间:&nbsp;</span>
+                <span>{{$value.release}}</span>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</body>
+
+</html>

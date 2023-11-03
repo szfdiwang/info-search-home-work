@@ -1,0 +1,10 @@
+.movie {
+    display: flex
+}
+
+.movie .movie-box {
+    width: 100px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
